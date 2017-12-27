@@ -848,6 +848,7 @@ ja:
   button_cancel: キャンセル
   button_activate: 有効にする
   button_sort: ソート
+  button_jump_to_bottom: 最新コメントへ
   button_log_time: 時間を記録
   button_rollback: このバージョンにロールバック
   button_watch: ウォッチ

@@ -1,4 +1,9 @@
 <div class="contextual">
+
+<% if journal = User.current.wants_comments_in_reverse_order? ? @journals.first : @journals.last %>
+  <%= link_to l(:button_jump_to_bottom, default: 'Jump to latest'), {:anchor => "note-#{journal.indice}"}, :class => 'icon icon-move' %>
+<% end %>
+
 <%= link_to l(:button_edit), edit_issue_path(@issue), :onclick => 'showAndScrollTo("update", "issue_notes"); return false;', :class => 'icon icon-edit', :accesskey => accesskey(:edit) if @issue.editable? %>
 <%= link_to l(:button_log_time), new_issue_time_entry_path(@issue), :class => 'icon icon-time-add' if User.current.allowed_to?(:log_time, @project) %>
 <%= watcher_link(@issue, User.current) %>
